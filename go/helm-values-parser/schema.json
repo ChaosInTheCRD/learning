@@ -1,0 +1,814 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "global": {
+      "type": "object",
+      "properties": {
+        "imageRegistry": {
+          "type": "string"
+        },
+        "imagePullSecrets": {
+          "type": "array",
+          "items": {}
+        },
+        "storageClass": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "imageRegistry",
+        "imagePullSecrets",
+        "storageClass"
+      ]
+    },
+    "kubeVersion": {
+      "type": "string"
+    },
+    "nameOverride": {
+      "type": "string"
+    },
+    "fullnameOverride": {
+      "type": "string"
+    },
+    "commonLabels": {
+      "type": "object"
+    },
+    "commonAnnotations": {
+      "type": "object"
+    },
+    "clusterDomain": {
+      "type": "string"
+    },
+    "extraDeploy": {
+      "type": "array",
+      "items": {}
+    },
+    "diagnosticMode": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "command": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "args": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "enabled",
+        "command",
+        "args"
+      ]
+    },
+    "image": {
+      "type": "object",
+      "properties": {
+        "registry": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "digest": {
+          "type": "string"
+        },
+        "pullPolicy": {
+          "type": "string"
+        },
+        "pullSecrets": {
+          "type": "array",
+          "items": {}
+        },
+        "debug": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "registry",
+        "repository",
+        "tag",
+        "digest",
+        "pullPolicy",
+        "pullSecrets",
+        "debug"
+      ]
+    },
+    "wildflyUsername": {
+      "type": "string"
+    },
+    "wildflyPassword": {
+      "type": "string"
+    },
+    "exposeManagementConsole": {
+      "type": "boolean"
+    },
+    "command": {
+      "type": "array",
+      "items": {}
+    },
+    "args": {
+      "type": "array",
+      "items": {}
+    },
+    "lifecycleHooks": {
+      "type": "object"
+    },
+    "extraEnvVars": {
+      "type": "array",
+      "items": {}
+    },
+    "extraEnvVarsCM": {
+      "type": "string"
+    },
+    "extraEnvVarsSecret": {
+      "type": "string"
+    },
+    "replicaCount": {
+      "type": "integer"
+    },
+    "updateStrategy": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "hostAliases": {
+      "type": "array",
+      "items": {}
+    },
+    "extraVolumes": {
+      "type": "array",
+      "items": {}
+    },
+    "extraVolumeMounts": {
+      "type": "array",
+      "items": {}
+    },
+    "serviceAccountName": {
+      "type": "string"
+    },
+    "sidecars": {
+      "type": "array",
+      "items": {}
+    },
+    "initContainers": {
+      "type": "array",
+      "items": {}
+    },
+    "podLabels": {
+      "type": "object"
+    },
+    "podAnnotations": {
+      "type": "object"
+    },
+    "podAffinityPreset": {
+      "type": "string"
+    },
+    "podAntiAffinityPreset": {
+      "type": "string"
+    },
+    "nodeAffinityPreset": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "values": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "type",
+        "key",
+        "values"
+      ]
+    },
+    "affinity": {
+      "type": "object"
+    },
+    "nodeSelector": {
+      "type": "object"
+    },
+    "tolerations": {
+      "type": "array",
+      "items": {}
+    },
+    "priorityClassName": {
+      "type": "string"
+    },
+    "schedulerName": {
+      "type": "string"
+    },
+    "topologySpreadConstraints": {
+      "type": "array",
+      "items": {}
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "limits": {
+          "type": "object"
+        },
+        "requests": {
+          "type": "object",
+          "properties": {
+            "memory": {
+              "type": "string"
+            },
+            "cpu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "memory",
+            "cpu"
+          ]
+        }
+      },
+      "required": [
+        "limits",
+        "requests"
+      ]
+    },
+    "containerPorts": {
+      "type": "object",
+      "properties": {
+        "http": {
+          "type": "integer"
+        },
+        "mgmt": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "http",
+        "mgmt"
+      ]
+    },
+    "extraContainerPorts": {
+      "type": "array",
+      "items": {}
+    },
+    "podSecurityContext": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "fsGroup": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "enabled",
+        "fsGroup"
+      ]
+    },
+    "containerSecurityContext": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "runAsUser": {
+          "type": "integer"
+        },
+        "runAsNonRoot": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled",
+        "runAsUser",
+        "runAsNonRoot"
+      ]
+    },
+    "startupProbe": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "tcpSocket": {
+          "type": "object",
+          "properties": {
+            "port": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "port"
+          ]
+        },
+        "initialDelaySeconds": {
+          "type": "integer"
+        },
+        "periodSeconds": {
+          "type": "integer"
+        },
+        "timeoutSeconds": {
+          "type": "integer"
+        },
+        "failureThreshold": {
+          "type": "integer"
+        },
+        "successThreshold": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "enabled",
+        "tcpSocket",
+        "initialDelaySeconds",
+        "periodSeconds",
+        "timeoutSeconds",
+        "failureThreshold",
+        "successThreshold"
+      ]
+    },
+    "livenessProbe": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "httpGet": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "port": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "port"
+          ]
+        },
+        "initialDelaySeconds": {
+          "type": "integer"
+        },
+        "periodSeconds": {
+          "type": "integer"
+        },
+        "timeoutSeconds": {
+          "type": "integer"
+        },
+        "failureThreshold": {
+          "type": "integer"
+        },
+        "successThreshold": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "enabled",
+        "httpGet",
+        "initialDelaySeconds",
+        "periodSeconds",
+        "timeoutSeconds",
+        "failureThreshold",
+        "successThreshold"
+      ]
+    },
+    "readinessProbe": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "httpGet": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "port": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "port"
+          ]
+        },
+        "initialDelaySeconds": {
+          "type": "integer"
+        },
+        "periodSeconds": {
+          "type": "integer"
+        },
+        "timeoutSeconds": {
+          "type": "integer"
+        },
+        "failureThreshold": {
+          "type": "integer"
+        },
+        "successThreshold": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "enabled",
+        "httpGet",
+        "initialDelaySeconds",
+        "periodSeconds",
+        "timeoutSeconds",
+        "failureThreshold",
+        "successThreshold"
+      ]
+    },
+    "customStartupProbe": {
+      "type": "object"
+    },
+    "customLivenessProbe": {
+      "type": "object"
+    },
+    "customReadinessProbe": {
+      "type": "object"
+    },
+    "service": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "ports": {
+          "type": "object",
+          "properties": {
+            "http": {
+              "type": "integer"
+            },
+            "mgmt": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "http",
+            "mgmt"
+          ]
+        },
+        "nodePorts": {
+          "type": "object",
+          "properties": {
+            "http": {
+              "type": "string"
+            },
+            "mgmt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "http",
+            "mgmt"
+          ]
+        },
+        "clusterIP": {
+          "type": "string"
+        },
+        "loadBalancerIP": {
+          "type": "string"
+        },
+        "loadBalancerSourceRanges": {
+          "type": "array",
+          "items": {}
+        },
+        "externalTrafficPolicy": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "object"
+        },
+        "extraPorts": {
+          "type": "array",
+          "items": {}
+        },
+        "sessionAffinity": {
+          "type": "string"
+        },
+        "sessionAffinityConfig": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "type",
+        "ports",
+        "nodePorts",
+        "clusterIP",
+        "loadBalancerIP",
+        "loadBalancerSourceRanges",
+        "externalTrafficPolicy",
+        "annotations",
+        "extraPorts",
+        "sessionAffinity",
+        "sessionAffinityConfig"
+      ]
+    },
+    "ingress": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "pathType": {
+          "type": "string"
+        },
+        "apiVersion": {
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "object"
+        },
+        "tls": {
+          "type": "boolean"
+        },
+        "extraHosts": {
+          "type": "array",
+          "items": {}
+        },
+        "extraPaths": {
+          "type": "array",
+          "items": {}
+        },
+        "extraTls": {
+          "type": "array",
+          "items": {}
+        },
+        "secrets": {
+          "type": "array",
+          "items": {}
+        },
+        "ingressClassName": {
+          "type": "string"
+        },
+        "extraRules": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "enabled",
+        "pathType",
+        "apiVersion",
+        "hostname",
+        "path",
+        "annotations",
+        "tls",
+        "extraHosts",
+        "extraPaths",
+        "extraTls",
+        "secrets",
+        "ingressClassName",
+        "extraRules"
+      ]
+    },
+    "mgmtIngress": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "pathType": {
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "object"
+        },
+        "tls": {
+          "type": "boolean"
+        },
+        "extraHosts": {
+          "type": "array",
+          "items": {}
+        },
+        "extraPaths": {
+          "type": "array",
+          "items": {}
+        },
+        "extraTls": {
+          "type": "array",
+          "items": {}
+        },
+        "secrets": {
+          "type": "array",
+          "items": {}
+        },
+        "ingressClassName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "pathType",
+        "hostname",
+        "annotations",
+        "tls",
+        "extraHosts",
+        "extraPaths",
+        "extraTls",
+        "secrets",
+        "ingressClassName"
+      ]
+    },
+    "persistence": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "storageClass": {
+          "type": "string"
+        },
+        "existingClaim": {
+          "type": "string"
+        },
+        "accessModes": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "size": {
+          "type": "string"
+        },
+        "annotations": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "enabled",
+        "storageClass",
+        "existingClaim",
+        "accessModes",
+        "size",
+        "annotations"
+      ]
+    },
+    "volumePermissions": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "registry": {
+              "type": "string"
+            },
+            "repository": {
+              "type": "string"
+            },
+            "tag": {
+              "type": "string"
+            },
+            "digest": {
+              "type": "string"
+            },
+            "pullPolicy": {
+              "type": "string"
+            },
+            "pullSecrets": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "registry",
+            "repository",
+            "tag",
+            "digest",
+            "pullPolicy",
+            "pullSecrets"
+          ]
+        },
+        "resources": {
+          "type": "object",
+          "properties": {
+            "limits": {
+              "type": "object"
+            },
+            "requests": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "limits",
+            "requests"
+          ]
+        },
+        "securityContext": {
+          "type": "object",
+          "properties": {
+            "runAsUser": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "runAsUser"
+          ]
+        }
+      },
+      "required": [
+        "enabled",
+        "image",
+        "resources",
+        "securityContext"
+      ]
+    }
+  },
+  "required": [
+    "global",
+    "kubeVersion",
+    "nameOverride",
+    "fullnameOverride",
+    "commonLabels",
+    "commonAnnotations",
+    "clusterDomain",
+    "extraDeploy",
+    "diagnosticMode",
+    "image",
+    "wildflyUsername",
+    "wildflyPassword",
+    "exposeManagementConsole",
+    "command",
+    "args",
+    "lifecycleHooks",
+    "extraEnvVars",
+    "extraEnvVarsCM",
+    "extraEnvVarsSecret",
+    "replicaCount",
+    "updateStrategy",
+    "hostAliases",
+    "extraVolumes",
+    "extraVolumeMounts",
+    "serviceAccountName",
+    "sidecars",
+    "initContainers",
+    "podLabels",
+    "podAnnotations",
+    "podAffinityPreset",
+    "podAntiAffinityPreset",
+    "nodeAffinityPreset",
+    "affinity",
+    "nodeSelector",
+    "tolerations",
+    "priorityClassName",
+    "schedulerName",
+    "topologySpreadConstraints",
+    "resources",
+    "containerPorts",
+    "extraContainerPorts",
+    "podSecurityContext",
+    "containerSecurityContext",
+    "startupProbe",
+    "livenessProbe",
+    "readinessProbe",
+    "customStartupProbe",
+    "customLivenessProbe",
+    "customReadinessProbe",
+    "service",
+    "ingress",
+    "mgmtIngress",
+    "persistence",
+    "volumePermissions"
+  ]
+}
