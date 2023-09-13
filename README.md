@@ -18,3 +18,6 @@ A selection of exercises on Go concurrency taken from [Github](https://github.co
 
 ### Advent 22
 [Advent of Code 2022](https://adventofcode.com/2022) exercises
+
+### Learn Go with Tests
+See [here](https://quii.gitbook.io/learn-go-with-tests/)
